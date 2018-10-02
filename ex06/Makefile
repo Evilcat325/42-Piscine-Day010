@@ -6,7 +6,7 @@
 #    By: seli <seli@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/02 02:19:52 by seli              #+#    #+#              #
-#    Updated: 2018/10/02 03:23:10 by seli             ###   ########.fr        #
+#    Updated: 2018/10/02 03:31:25 by seli             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	@${CC} ${CFLAGS} -o $(NAME) $(OBJECTS)
 
-$(OBJECTS): $(OBJDIR/%.o : $(SRCDIR)/%.c | $(OBJDIR)
+$(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.c | $(OBJDIR)
 	@${CC} ${CFLAGS} -c -o $@ $<
 
 $(OBJDIR):
@@ -38,6 +38,6 @@ clean:
 	@/bin/rm -rf $(OBJDIR)
 
 fclean: clean
-	@/bin/rm -f libft.a
+	@/bin/rm -f $(NAME)
 
 re: fclean all

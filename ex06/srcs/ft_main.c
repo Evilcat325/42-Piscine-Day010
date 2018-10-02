@@ -6,7 +6,7 @@
 /*   By: seli <seli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/02 02:24:13 by seli              #+#    #+#             */
-/*   Updated: 2018/10/02 03:20:31 by seli             ###   ########.fr       */
+/*   Updated: 2018/10/02 03:30:01 by seli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		main(int argc, char **argv)
 	long	x;
 	long	y;
 	int		op;
-	int		*ops[6];
+	void	(*ops[6])(long, long);
 
 	if (argc != 4)
 		return (0);
@@ -26,6 +26,7 @@ int		main(int argc, char **argv)
 	y = ft_atoi(argv[3]);
 	ft_map_int_to_op(ops);
 	ft_do_op(x, y, ops[op]);
+	ft_putchar('\n');
 	return (0);
 }
 
@@ -46,7 +47,7 @@ int		ft_map_str_to_int(char *str)
 	return (OP_INVALID);
 }
 
-void	ft_map_int_to_op(int *ops[6])
+void	ft_map_int_to_op(void (*ops[6])(long, long))
 {
 	ops[OP_INVALID] = ft_invalid_op;
 	ops[OP_ADD] = ft_add;
@@ -57,6 +58,8 @@ void	ft_map_int_to_op(int *ops[6])
 
 void	ft_invalid_op(long x, long y)
 {
+	UNUSED(x);
+	UNUSED(y);
 	ft_putchar('0');
 }
 
