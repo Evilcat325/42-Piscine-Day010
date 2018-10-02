@@ -6,7 +6,7 @@
 #    By: seli <seli@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/01 19:24:00 by seli              #+#    #+#              #
-#    Updated: 2018/10/01 23:01:36 by seli             ###   ########.fr        #
+#    Updated: 2018/10/01 23:10:47 by seli             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,9 @@ $(OBJECTS): %.o : $(SRCDIR)/%.c
 	@${CC} ${CFLAGS} -c -o $@ $<
 
 clean:
-	@@rm -f $(OBJECTS)
+	@rm -f $(OBJECTS)
 
 fclean: clean
-	@@rm -f libft.a
+	@rm -f libft.a
 
 re: fclean all
