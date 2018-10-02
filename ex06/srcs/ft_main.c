@@ -6,7 +6,7 @@
 /*   By: seli <seli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/02 02:24:13 by seli              #+#    #+#             */
-/*   Updated: 2018/10/02 03:30:01 by seli             ###   ########.fr       */
+/*   Updated: 2018/10/02 03:47:20 by seli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	ft_map_int_to_op(void (*ops[6])(long, long))
 	ops[OP_INVALID] = ft_invalid_op;
 	ops[OP_ADD] = ft_add;
 	ops[OP_SUB] = ft_subtract;
+	ops[OP_MUT] = ft_multiply;
 	ops[OP_DIV] = ft_divide;
 	ops[OP_MOD] = ft_mod;
 }
