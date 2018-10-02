@@ -6,7 +6,7 @@
 #    By: seli <seli@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/02 02:19:52 by seli              #+#    #+#              #
-#    Updated: 2018/10/02 03:31:25 by seli             ###   ########.fr        #
+#    Updated: 2018/10/02 16:46:09 by seli             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,19 +19,20 @@ SRCDIR = srcs
 OBJDIR = objs
 
 SOURCES = ft_main.c ft_op.c ft_stdio.c
-SOURCES := ${SOURCES:%=$(SRCDIR)/%}
-OBJECTS := ${SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o}
+DEPS = $(IDIR)/ft_define.h
+SOURCES := $(SOURCES:%=$(SRCDIR)/%)
+OBJECTS := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	@${CC} ${CFLAGS} -o $(NAME) $(OBJECTS)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJECTS)
 
-$(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.c | $(OBJDIR)
-	@${CC} ${CFLAGS} -c -o $@ $<
+$(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.c $(IDIR)/%.h $(DEPS) | $(OBJDIR)
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(OBJDIR):
-	mkdir $@
+	@mkdir $@
 
 clean:
 	@/bin/rm -f $(OBJECTS)
