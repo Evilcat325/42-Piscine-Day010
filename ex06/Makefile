@@ -6,7 +6,7 @@
 #    By: seli <seli@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/02 02:19:52 by seli              #+#    #+#              #
-#    Updated: 2018/10/02 19:26:59 by seli             ###   ########.fr        #
+#    Updated: 2018/10/02 21:29:39 by seli             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ $(NAME): $(OBJECTS)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJECTS)
 
 $(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.c $(IDIR)/%.h $(DEPS) | $(OBJDIR)
-	$(CC) $(CFLAGS) -c -o $@ $<
+	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(OBJDIR):
 	@mkdir $@
