@@ -6,7 +6,7 @@
 /*   By: seli <seli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/02 02:29:45 by seli              #+#    #+#             */
-/*   Updated: 2018/10/02 18:33:59 by seli             ###   ########.fr       */
+/*   Updated: 2018/10/02 18:47:19 by seli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # define ERROR_MOD_BY_ZERO "Stop : modulo by zero"
 # define ERROR_USAGE_FRONT "error : only [ "
 # define ERROR_USAGE_BACK "] are acepted."
-# define OPS_SIZE sizeof(g_opptab) / sizeof(s_opp)
 # define UNUSED(X) (void)(X)
 
 typedef void	(*t_ops)(long, long);

@@ -6,14 +6,14 @@
 /*   By: seli <seli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/02 18:19:07 by seli              #+#    #+#             */
-/*   Updated: 2018/10/02 18:21:43 by seli             ###   ########.fr       */
+/*   Updated: 2018/10/02 19:36:21 by seli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_OPP_H
 # define FT_OPP_H
 # include "ft_op.h"
-# include "ft_main.h"
+# include "ft_do_op.h"
 
 t_opp g_opptab[] =
 {
