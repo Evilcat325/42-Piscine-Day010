@@ -6,7 +6,7 @@
 #    By: seli <seli@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/01 19:24:00 by seli              #+#    #+#              #
-#    Updated: 2018/10/02 16:28:17 by seli             ###   ########.fr        #
+#    Updated: 2018/10/02 20:03:06 by seli             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	@ar -rcs libft.a $(OBJECTS)
 
-$(OBJECTS): %.o : $(SRCDIR)/%.c $(IDIR)/%.h
+$(OBJECTS): %.o : $(SRCDIR)/%.c
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
