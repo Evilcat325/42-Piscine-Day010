@@ -6,7 +6,7 @@
 #    By: seli <seli@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/02 02:19:52 by seli              #+#    #+#              #
-#    Updated: 2018/10/02 19:30:52 by seli             ###   ########.fr        #
+#    Updated: 2018/10/02 21:37:38 by seli             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCDIR = srcs
 OBJDIR = objs
 
 SOURCES = ft_op.c ft_stdio.c ft_do_op.c ft_main.c
-DEPS = $(IDIR)/ft_define.h $(IDIR)/ft_opp.h
+DEPS = $(IDIR)/ft_define.h ft_opp.h
 SOURCES := $(SOURCES:%=$(SRCDIR)/%)
 OBJECTS := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
