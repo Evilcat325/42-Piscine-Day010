@@ -6,7 +6,7 @@
 #    By: seli <seli@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/01 19:24:00 by seli              #+#    #+#              #
-#    Updated: 2018/10/02 20:03:06 by seli             ###   ########.fr        #
+#    Updated: 2018/10/02 22:12:48 by seli             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,9 @@ OBJECTS := $(SOURCES:$(SRCDIR)/%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
+$(NAME):
+	@$(CC) $(CFLAGS) -c $(SOURCES)
 	@ar -rcs libft.a $(OBJECTS)
-
-$(OBJECTS): %.o : $(SRCDIR)/%.c
-	@$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
 	@/bin/rm -f $(OBJECTS)
